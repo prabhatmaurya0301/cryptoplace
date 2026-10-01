@@ -12,7 +12,7 @@ const CoinContextProvider = (props) => {
   });
   const fetchData = async () => {
     try {
-      const response = await fetch(`/markets?vs_currency=${currency.name}`);
+      const response = await fetch(`/api/markets?vs_currency=${currency.name}`);
       if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status}`);
       }
