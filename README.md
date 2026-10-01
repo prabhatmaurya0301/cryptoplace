@@ -1,16 +1,29 @@
-# React + Vite
+# CryptoPlace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cryptocurrency price tracking web application built with React and CoinGecko API.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[View CryptoPlace Live](https://cryptoplace-2va1xbjth-beru7.vercel.app)
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js
+- Vite
+- JavaScript
+- React Router
+- Context API
+- CoinGecko API
+- Vercel Serverless Functions
+- CSS
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Real-time cryptocurrency prices
+- Search cryptocurrencies
+- USD, INR and EUR currency support
+- Individual cryptocurrency details
+- Historical price chart
+- Market rank, market cap and 24-hour high/low
+- Responsive UI
+- Secure server-side API integration
