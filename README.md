@@ -4,7 +4,7 @@ A cryptocurrency price tracking web application built with React and CoinGecko A
 
 ## 🚀 Live Demo
 
-[View CryptoPlace Live](https://cryptoplace-2va1xbjth-beru7.vercel.app)
+[View CryptoPlace Live](https://cryptoplace-rho-five.vercel.app/)
 
 ## 🛠️ Tech Stack
 
