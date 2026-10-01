@@ -121,7 +121,7 @@
   min-height: 55px;
   background: rgba(255, 255, 255, 0.035);
   color: #8f96a3;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
@@ -138,14 +138,14 @@
 
 .table-layout > p {
   margin: 0;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.2;
 }
 
 .table-layout > p:first-child {
   color: #8f96a3;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
 }
 
@@ -157,8 +157,8 @@
 }
 
 .table-layout > div img {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
   object-fit: contain;
 }
@@ -166,7 +166,7 @@
 .table-layout > div p {
   margin: 0;
   color: #f3f4f6;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.2;
   white-space: nowrap;
@@ -177,7 +177,7 @@
 .table-layout > p:nth-child(3),
 .table-layout > p:nth-child(4),
 .table-layout > p:nth-child(5) {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -236,15 +236,15 @@
   .table-layout > p:nth-child(3),
   .table-layout > p:nth-child(4),
   .table-layout > p:nth-child(5) {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .table-layout > p:first-child {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .cryptotable > .table-layout:first-child {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 
