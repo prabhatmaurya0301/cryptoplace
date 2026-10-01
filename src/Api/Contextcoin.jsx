@@ -1,10 +1,10 @@
-import { createContext, useState ,useEffect} from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const CoinContext = createContext();
 
 const CoinContextProvider = (props) => {
-  const [error,setError] = useState("");
-  const [loading,setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
   const [allcoin, setAllcoin] = useState([]);
   const [currency, setCurrency] = useState({
     name: "usd",
@@ -12,9 +12,7 @@ const CoinContextProvider = (props) => {
   });
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        `/api/v3/coins/markets?vs_currency=${currency.name}`
-      );
+      const response = await fetch(`/markets?vs_currency=${currency.name}`);
       if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status}`);
       }
@@ -22,12 +20,10 @@ const CoinContextProvider = (props) => {
       const data = await response.json();
       console.log(data);
       setAllcoin(data);
-    } 
-    catch (error) {
+    } catch (error) {
       console.log(error);
       setError(error.message);
-    } 
-    finally {
+    } finally {
       setLoading(false);
     }
   };
@@ -37,9 +33,17 @@ const CoinContextProvider = (props) => {
   }, [currency]);
 
   const contextvalue = {
-    allcoin,currency,setCurrency,loading,error
+    allcoin,
+    currency,
+    setCurrency,
+    loading,
+    error,
   };
-  return <CoinContext.Provider value={contextvalue}>{props.children}</CoinContext.Provider>;
+  return (
+    <CoinContext.Provider value={contextvalue}>
+      {props.children}
+    </CoinContext.Provider>
+  );
 };
 
 export default CoinContextProvider;

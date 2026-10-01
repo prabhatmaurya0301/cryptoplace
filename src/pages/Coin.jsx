@@ -16,9 +16,7 @@ function Coin() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        `/api/coin?id=${coinID}`
-      );
+      const response = await fetch(`/api/coin?id=${coinID}`);
 
       if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status}`);
@@ -38,7 +36,7 @@ function Coin() {
   const fetchHistoricalData = async () => {
     try {
       const response = await fetch(
-        `/api/chart?id=${coinID}&vs_currency=${currency.name}`
+        `/api/chart?id=${coinID}&vs_currency=${currency.name}`,
       );
 
       if (!response.ok) {
@@ -98,9 +96,7 @@ function Coin() {
             <li>Market Cap</li>
             <li>
               {currency.symbol}{" "}
-              {coinData.market_data.market_cap[
-                currency.name
-              ].toLocaleString()}
+              {coinData.market_data.market_cap[currency.name].toLocaleString()}
             </li>
           </ul>
 
@@ -108,9 +104,7 @@ function Coin() {
             <li>24 Hour High</li>
             <li>
               {currency.symbol}{" "}
-              {coinData.market_data.high_24h[
-                currency.name
-              ].toLocaleString()}
+              {coinData.market_data.high_24h[currency.name].toLocaleString()}
             </li>
           </ul>
 
@@ -118,9 +112,7 @@ function Coin() {
             <li>24 Hour Low</li>
             <li>
               {currency.symbol}{" "}
-              {coinData.market_data.low_24h[
-                currency.name
-              ].toLocaleString()}
+              {coinData.market_data.low_24h[currency.name].toLocaleString()}
             </li>
           </ul>
         </div>
