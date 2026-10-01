@@ -6,24 +6,26 @@ import LineChart from "../components/LInechart";
 
 function Coin() {
   const { coinID } = useParams("");
+
   const [coinData, setCoinData] = useState();
   const [historicalData, setHistoricalData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   const { currency } = useContext(CoinContext);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`/api/v3/coins/${coinID}`, {
-        headers: {
-          "x-cg-demo-api-key": "CG-RfLpFbLfYn1YaiVoUiyiym1g",
-        },
-      });
+      const response = await fetch(
+        `/api/coin?id=${coinID}`
+      );
+
       if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status}`);
       }
 
       const data = await response.json();
+
       setCoinData(data);
     } catch (error) {
       console.log(error);
@@ -36,18 +38,15 @@ function Coin() {
   const fetchHistoricalData = async () => {
     try {
       const response = await fetch(
-        `/api/v3/coins/${coinID}/market_chart?vs_currency=${currency.name}&days=10&interval=daily`,
-        {
-          headers: {
-            "x-cg-demo-api-key": "CG-RfLpFbLfYn1YaiVoUiyiym1g",
-          },
-        },
+        `/api/chart?id=${coinID}&vs_currency=${currency.name}`
       );
+
       if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status}`);
       }
 
       const data = await response.json();
+
       setHistoricalData(data);
     } catch (error) {
       console.log(error);
@@ -56,22 +55,25 @@ function Coin() {
       setLoading(false);
     }
   };
+
   useEffect(() => {
     fetchData();
     fetchHistoricalData();
-  }, [currency]);
+  }, [currency, coinID]);
 
   if (coinData && historicalData) {
     return (
       <div className="coin">
         <div className="coin-name">
           <img src={coinData.image.large} alt="" />
+
           <p>
             <b>
               {coinData.name} ({coinData.symbol.toUpperCase()})
             </b>
           </p>
         </div>
+
         <div className="line-chart">
           <LineChart historicalData={historicalData} />
         </div>
@@ -81,6 +83,7 @@ function Coin() {
             <li>Crypto Market Rank</li>
             <li>{coinData.market_cap_rank}</li>
           </ul>
+
           <ul>
             <li>Current Price</li>
             <li>
@@ -95,7 +98,9 @@ function Coin() {
             <li>Market Cap</li>
             <li>
               {currency.symbol}{" "}
-              {coinData.market_data.market_cap[currency.name].toLocaleString()}
+              {coinData.market_data.market_cap[
+                currency.name
+              ].toLocaleString()}
             </li>
           </ul>
 
@@ -103,7 +108,9 @@ function Coin() {
             <li>24 Hour High</li>
             <li>
               {currency.symbol}{" "}
-              {coinData.market_data.high_24h[currency.name].toLocaleString()}
+              {coinData.market_data.high_24h[
+                currency.name
+              ].toLocaleString()}
             </li>
           </ul>
 
@@ -111,7 +118,9 @@ function Coin() {
             <li>24 Hour Low</li>
             <li>
               {currency.symbol}{" "}
-              {coinData.market_data.low_24h[currency.name].toLocaleString()}
+              {coinData.market_data.low_24h[
+                currency.name
+              ].toLocaleString()}
             </li>
           </ul>
         </div>

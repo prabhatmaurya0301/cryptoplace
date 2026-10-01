@@ -13,12 +13,7 @@ const CoinContextProvider = (props) => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `/api/v3/coins/markets?vs_currency=${currency.name}`,
-        {
-          headers: {
-            "x-cg-demo-api-key": "CG-RfLpFbLfYn1YaiVoUiyiym1g",
-          },
-        },
+        `/api/v3/coins/markets?vs_currency=${currency.name}`
       );
       if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status}`);
@@ -42,7 +37,7 @@ const CoinContextProvider = (props) => {
   }, [currency]);
 
   const contextvalue = {
-    allcoin,currency,setCurrency
+    allcoin,currency,setCurrency,loading,error
   };
   return <CoinContext.Provider value={contextvalue}>{props.children}</CoinContext.Provider>;
 };
