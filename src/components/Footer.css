@@ -1,0 +1,48 @@
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+
+    padding: 22px 0;
+
+    text-align: center;
+
+    color: #737b8c;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================
+   FOOTER HOVER
+========================= */
+
+.footer:hover {
+    color: #aeb5c2;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .footer {
+        width: 90%;
+
+        padding: 18px 0;
+
+        font-size: 11px;
+    }
+}

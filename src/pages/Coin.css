@@ -1,0 +1,246 @@
+.coin {
+  min-height: 100vh;
+  padding: 60px 20px 100px;
+  color: #ffffff;
+  background: radial-gradient(circle at 50% 0%, rgba(121, 39, 255, 0.12), transparent 35%);
+}
+
+.coin-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 20px auto 55px;
+  text-align: center;
+}
+
+.coin-name img {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(121, 39, 255, 0.25));
+  transition: transform 0.3s ease;
+}
+
+.coin-name img:hover {
+  transform: scale(1.06);
+}
+
+.coin-name p {
+  margin: 0;
+}
+
+.coin-name p b {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.coin-name p::first-letter {
+  color: #ffffff;
+}
+
+.line-chart {
+  width: min(900px, 100%);
+  height: 400px;
+  margin: 0 auto;
+  padding: 25px;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, rgba(121, 39, 255, 0.10), rgba(255, 255, 255, 0.025));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.coin-info {
+  width: min(1000px, 100%);
+  margin: 55px auto 0;
+  padding: 25px 35px;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.coin-info ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  list-style: none;
+}
+
+.coin-info ul:last-child {
+  border-bottom: none;
+}
+
+.coin-info ul li:first-child {
+  color: #aeb5c2;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.coin-info ul li:last-child {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: right;
+}
+
+.spinnar {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spin {
+  width: 58px;
+  height: 58px;
+  border: 5px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #7927ff;
+  border-right-color: #7927ff;
+  border-radius: 50%;
+  animation: rotate 0.8s linear infinite;
+  box-shadow: 0 0 25px rgba(121, 39, 255, 0.2);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .coin {
+    padding: 50px 18px 80px;
+  }
+
+  .coin-name {
+    margin-bottom: 40px;
+  }
+
+  .coin-name img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .line-chart {
+    height: 350px;
+    padding: 18px;
+  }
+
+  .coin-info {
+    width: min(900px, 100%);
+    margin-top: 40px;
+    padding: 20px 25px;
+  }
+
+  .coin-info ul {
+    padding: 18px 5px;
+  }
+
+  .coin-info ul li:first-child {
+    font-size: 19px;
+  }
+
+  .coin-info ul li:last-child {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 600px) {
+  .coin {
+    padding: 40px 12px 70px;
+  }
+
+  .coin-name {
+    gap: 14px;
+    margin: 10px auto 35px;
+  }
+
+  .coin-name img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .coin-name p b {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  .line-chart {
+    height: 280px;
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .coin-info {
+    width: 100%;
+    margin-top: 25px;
+    padding: 10px 15px;
+    border-radius: 14px;
+  }
+
+  .coin-info ul {
+    padding: 16px 3px;
+    gap: 10px;
+  }
+
+  .coin-info ul li:first-child {
+    font-size: 16px;
+  }
+
+  .coin-info ul li:last-child {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 400px) {
+  .coin {
+    padding: 30px 10px 60px;
+  }
+
+  .coin-name img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .coin-name p b {
+    font-size: 26px;
+  }
+
+  .line-chart {
+    height: 240px;
+    padding: 5px;
+  }
+
+  .coin-info {
+    padding: 8px 12px;
+  }
+
+  .coin-info ul {
+    padding: 14px 2px;
+  }
+
+  .coin-info ul li:first-child {
+    font-size: 14px;
+  }
+
+  .coin-info ul li:last-child {
+    font-size: 15px;
+  }
+}
